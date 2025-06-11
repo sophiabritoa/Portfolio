@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio | Sophia Brito</title>
+</head>
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li> 
+                <a href="#inicio" class="meu-link">Início</a>
+            </li>
+            <li> 
+                <a href="#sobre" class="meu-link">Sobre</a>
+            </li>
+            <li> 
+                <a href="#mais" class="meu-link" >Mais</a>
+            </li>
+            <li> 
+                <a href="#contato" class="meu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/sophia.jpg" alt="Foto de Sophia Brito" class="foto-perfil"> 
+        <h1>Sophia Brito</h1>
+        <p class="cabecalho-subtitulo">Ciência da Computação - CESAR School</p>
+    
+    </main>
+    <section id="sobre" class=""sobre>
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class-="sobre-paragrafo">
+                Olá! Me chamo Sophia Brito e sou estudante de Ciência da Computação na CESAR School em Recife, PE. Tenho experiência como estagiária na Bidweb Security IT na equipe de engenharia de software. Na faculdade aprendi a linguagem de programação Python e fiz um curso da CISCO Academy sobre essa linguagem, e para aprofundarainda mais meus conhecimentos decidi aprender a como fazer uma API utilizando Flask e Insomnia. Já na disciplina de Introdução a Computação aprendi sobre as linguagens HTML , CSS e JavaScript, as quais utilizei para criar esse Portfólio.
+            </p>
+        </div>
+    </section>
+    <section id="mais" class="mais">
+        <h2 class="mais-titulo">Mais Sobre Mim</h2>
+        <div class="mais-caixa">
+            <div class="mais-card">
+                <img src="./img/formitas.png" alt="Projetos 1" class="mais-imagem">
+                <h3 class="info-mais">Projetos 1</h3>
+                <p class="paragrafo-mais">Formitas foi o artefato desenvolvido na disciplina de Projetos 1. Ele é um jogo de tabuleiro interativo que ajuda no aprendizado, coordenação motora e raciocínio lógico pensado para crianças com Síndrome de Down. Usa formas e letras para estimular a associação feedback na tela incentiva o acerto e motiva novas tentativas. É um jogo que promove inclusão, diversão e aprendizado ao mesmo tempo</p>
+            </div>
+            <div class="mais-card">
+                <img src="./img/interesse.png" alt="Projetos 1" class="mais-imagem">
+                <h3 class="info-mais">Interesses Profissionais</h3>
+                <p class="paragrafo-mais">Tenho interesse em cibersegurança, desenvolvimento de software, inovação e business e direito digital.</p>
+            </div>
+             <div class="mais-card">
+                <img src="./img/inspira.jpg" alt="Projetos 1" class="mais-imagem">
+                <h3 class="info-mais">Inspiração</h3>
+                <p class="paragrafo-mais">minhas maior inspiraçào com certeza vem da minha mãe, Flávia Brito. Saber de sua história e ver de perto sua evolução e sucesso me faz almejar tamanha garra e determinação. Vendo o seu lado de empresária eu vejo a transformação que ela faz na vida de muitas empresas, mas em principal ela transforma pessoas. Espero um dia impactar tantos e tantas assim como ela.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="nome-form">
+                <input placeholder="Nome" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea placeholder="Digite sua mensagem" class="text-form"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+    <script>
+        function enviarWhatsapp(event){
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5581991304664';
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+
+            const mensagemformatada = encodeURIComponent(texto)
+            const url = `https://wa.me/${telefone}?text=${mensagemformatada}`
+            window.open(url, '_blank')
+        }
+    </script>
+</body>
+</html>
